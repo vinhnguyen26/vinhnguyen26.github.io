@@ -1,0 +1,236 @@
+/* -----------------------------------------------------------
+   UC Berkeley Themed Personal Website by Vinh Nguyen (created 2025)
+   Font: Georgia (Serif + Sans)
+   ----------------------------------------------------------- */
+
+/* Base styles */
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #f9fafc;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header with dynamic backgrounds - compact height */
+header {
+  max-width: 1025px;
+  margin: 1.5rem auto 0 auto; /* center & give spacing above */
+  color: white;
+  text-align: center;
+  padding: 1rem 0; /* half-height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 12px;  /*optional rounded edges */
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:  rgba(0, 39, 118, 0.4);/* Berkeley blue overlay */
+}
+
+
+/*Body background */
+body {
+  background-image: url("images/"); /* replace with the image file */
+  background-size: cover; /* adjust size of pattern */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f5f8fc ; /*  fallback light winter blue / almost white */
+}
+
+/* Different background per page */
+body.home header {
+  background-image: url('images/golden_bridge.jpg');
+}
+
+body.research header {
+  background-image: url('images/UCBcampus.jpg');
+}
+
+body.teaching header {
+  background-image: url('images/UCBcampus.jpg');
+}
+
+body.others header {
+  background-image: url('images/peach.jpg');
+  background-size: 500px;
+  background-repeat: repeat;
+}
+
+/* Header title and subtitle color (Berkeley Gold) */
+header h1,
+header p {
+  color: #FDB515; /* UC Berkeley Gold */
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Navigation Bar - compact */
+nav {
+  max-width: 1025px;
+  margin: 0.75rem auto;  /* center the nav bar */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #003262; /* Berkeley Blue Alt */
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #3b7ea1; /* Berkeley accent */
+}
+
+/* Content */
+.content {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Profile on Home page */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  object-fit: cover;
+  border: none;
+}
+
+/* Profile image column */
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Academic icons */
+.academic-links {
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.academic-links img {
+  width: 34px;
+  height: 34px;
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.academic-links img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* Profile text (justified alignment) */
+.profile-text {
+  flex: 1;
+  text-align: justify;
+}
+
+.profile-text p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Headings */
+h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #002676;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: #003262;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Publication List */
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pub-list li {
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.pub-list b {
+  color: black;
+  margin-right: 0.5rem;
+}
+
+.pub-list a {
+  font-family: 'Georgia', serif;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+  font-size: 0.9em;
+  margin-top: 2rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile img {
+    margin-bottom: 1rem;
+  }
+  .content {
+    padding: 1.5rem;
+  }
+  nav a {
+    padding: 0.5rem 0.8rem;
+  }
+}
